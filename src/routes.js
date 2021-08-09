@@ -9,11 +9,20 @@ const routeRender = () => {
         "/": home,
         "/login": login,
         "/registration": registration,
-        "/feed": feed,}
+        "/feed": feed,
+    }
     root.innerHTML = ""
     root.appendChild(routes[window.location.pathname]())
     console.log(window.location.pathname)
-    console.log(routes[window.location.pathname])
+    //console.log(routes[window.location.pathname])
 }
 
-window.addEventListener('load', routeRender) 
+window.addEventListener("popstate", routeRender);
+
+window.addEventListener('load', routeRender)
+export const route = (state) => {
+    window.history.pushState({}, "", state)
+    const popStateEvent = new PopStateEvent("popstate", { state: {} });
+    dispatchEvent(popStateEvent);
+}
+console.log("pegou")
