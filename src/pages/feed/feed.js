@@ -6,7 +6,7 @@ export const feed = () => {
     <img id="background" src="./pages/login/img/paleta3.jpg" alt="">
     <div class="esmaeceHeader logotipo-text">
       <section>
-      <h2>As Doceiras</h2>
+      <h2>Feed A fazer</h2>
     </section>
   </div>
     <h4>Não tem cadastro? <span><a href="/signup" id="signup">Cadastre-se</a></span></h4>
