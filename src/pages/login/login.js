@@ -1,3 +1,5 @@
+import { route } from "../../routes.js";
+
 export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
@@ -16,7 +18,7 @@ export const login = () => {
     </div>
     <div class="google">
       <button id="btn-login" class="login btn">LOGIN</button>
-      <img id="icon-google" src="./pages/login/img/icon-google-white.png">
+      <img id="icon-google" src="./img/google.jpg">
     </div>
     <form>
       <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
@@ -27,8 +29,15 @@ export const login = () => {
 
   rootElement.innerHTML = container;
   
-  /*const btnLogin = rootElement.querySelector("#btn-login");
-  const btnGoogle = rootElement.querySelector("#icon-google");
+  const btnLogin = rootElement.querySelector("#btn-login");
+  btnLogin.addEventListener('click', (event) => { 
+    event.preventDefault(); 
+    const loginEmail = () => { 
+      route("/feed");
+    };
+    loginEmail();
+  });
+  /*const btnGoogle = rootElement.querySelector("#icon-google");
   const email = rootElement.querySelector('#email');
   const password = rootElement.querySelector('#password');
   const checkbox = rootElement.querySelector('.checkbox');
