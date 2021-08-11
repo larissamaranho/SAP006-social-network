@@ -3,8 +3,8 @@ export const home = () => {
     const rootElement = document.createElement("div");
     const container = `
     <div>
-      <img id="background" src="./pages/login/img/paleta3.jpg" alt="">
-      <div class="esmaeceHeader logotipo-text">
+      <img id="background" src="" alt="">
+      <div class="background">
         <section>
         <h2>As Doceiras</h2>
       </section>
