@@ -3,14 +3,13 @@ import { route } from "../../routes.js";
 export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
-    <div>
-      <img id="background" src="./pages/login/img/paleta3.jpg" alt="">
-      <div class="esmaeceHeader logotipo-text">
+    <header class="bg-desktop" >
+      <img id="bg-desktop" src="./img/bg-desktop.png">
         <section>
-        <h2>As Doceiras</h2>
-      </section>
-    </div>
-      <div class="inputAndReset">
+          <h2>As Doceiras</h2>
+        </section>
+    </header>
+      <div class="containerLogin">
       <input type="text" id="email" class="input" placeholder="Email">
       <input type="password" id="password" class="input" placeholder="Senha">
       <a class="reset-password" id="reset" href="/reset">Esqueceu a senha?</a><br>
