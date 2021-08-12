@@ -18,13 +18,12 @@ export const login = () => {
     <div class="google">
       <button id="btn-login" class="login btn">LOGIN</button>
     </div>
-    <h4>Não tem cadastro? <span><a href="/signup" id="signup">Cadastre-se</a></span></h4>
+    <h4>Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span></h4>
     <div class="ou"> Ou </div>
     <h4>Faça o login com o <span><a href="/signup" id="signup">Google</a></span></h4>
     <form>
       <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
     </form>
-  
   </div> 
   `;
 
