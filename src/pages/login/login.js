@@ -3,10 +3,12 @@ import { route } from "../../routes.js";
 export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
-    <div class="bg-desktop" >
+    <Header class="imgHeaderLogin">
+    <img class="logoCelular" src=".src/img/logo-login.png>
         <section>
         <h2>As Doceiras</h2>
       </section>
+    </header>  
     </div>
       <div class="containerLogin">
       <input type="text" id="email" class="input" placeholder="Email">

@@ -1,7 +1,6 @@
 
-body{
-  background-image: url(/img/bg-desktop.jpg);
-  background-size: cover;
+.imgHome{
+  image-orientation: from-image;
 }
 
 .home{

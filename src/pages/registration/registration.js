@@ -6,6 +6,7 @@ export const registration = () => {
           <h2>As Doceiras</h2>
         </section>
         </div>
+      
         <div class="label-float">
           <input type="text" id="nome" class="nome" placeholder="Nome">
         </div>
