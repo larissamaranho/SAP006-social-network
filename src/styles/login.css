@@ -1,4 +1,9 @@
 
+body{
+    background-image: url("./src/img/bg-desktop.jpg");
+    background-size: cover;
+}
+
 h2{
     text-align: center;
 }
@@ -13,11 +18,11 @@ h2{
     opacity: 100%;
 }
 
-.content-opacity {
+/*.content-opacity {
     background-image: url(./src/img/bg-desktop.png);
     filter: opacity(0.4);
     z-index: -1;
     padding: 10% 5% 5% 5%;
-    /* height: 100%; */
-    /* width: 130%; */
-}
+    height: 100%; 
+    width: 130%;*/
+
