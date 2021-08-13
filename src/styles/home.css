@@ -1,4 +1,8 @@
 
+body{
+  background-image: url(/img/bg-desktop.jpg);
+  background-size: cover;
+}
 
 .home{
   text-align: center;

@@ -4,7 +4,6 @@ export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
     <div class="bg-desktop" >
-      <!-- <img id="bg-desktop" src="./img/bg-desktop.jpg"> -->
         <section>
           <h2>As Doceiras</h2>
         </section>
