@@ -5,25 +5,24 @@ export const login = () => {
   const container = `
     <div class="bg-desktop" >
         <section>
-          <h2>As Doceiras</h2>
-        </section>
-        <div class="containerLogin">
-          <input type="text" id="email" class="input" placeholder="Email">
-          <input type="password" id="password" class="input" placeholder="Senha">
-          <a class="reset-password" id="reset" href="/reset">Esqueceu a senha?</a><br>
-        </div>
-      <div class="google">
-          <button id="btn-login" class="login btn">LOGIN</button>
-      </div>
-      <h4>Não tem cadastro? <span><a href="/signup" id="signup">Cadastre-se</a></span></h4>
-      <div class="ou"> Ou </div>
-      <h4>Faça o login com o <span><a href="/signup" id="signup">Google</a></span></h4>
-       <form>
-      <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
-       </form>
-  
+        <h2>As Doceiras</h2>
+      </section>
     </div>
-       
+      <div class="containerLogin">
+      <input type="text" id="email" class="input" placeholder="Email">
+      <input type="password" id="password" class="input" placeholder="Senha">
+      <a class="reset-password" id="reset" href="/reset">Esqueceu a senha?</a><br>
+    </div>
+    <div class="google">
+      <button id="btn-login" class="login btn">LOGIN</button>
+    </div>
+    <h4>Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span></h4>
+    <div class="ou"> Ou </div>
+    <h4>Faça o login com o <span><a href="/signup" id="signup">Google</a></span></h4>
+    <form>
+      <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
+    </form>
+  </div> 
   `;
 
   rootElement.innerHTML = container;
