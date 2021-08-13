@@ -1,40 +1,20 @@
 export const registration = () => {
     const rootElement = document.createElement("div");
     const container = `
-      <div class="container">
-        <section>
-          <h2>As Doceiras</h2>
-        </section>
-      </div>
-      <div class="containerInputs">
-        <div class="label-float">
-          <input type="text" id="nome" class="nome" placeholder="Nome">
-        </div>
-        <div class="label-float">
-          <input type="text" id="sobrenome" class="sobrenome" placeholder="Sobrenome">
-        </div>
-        <div class="label-float">
-          <input type="email" id="email" class="email" placeholder="E-mail">
-        </div>
-        <div class="label-float">
-          <input type="password" id="password" class="input" placeholder="Senha">
-        </div>
-        <div class="label-float">
-          <input type="password" id="password" class="input" placeholder="Confirme sua senha">
-        </div>
-      </div>
-      <div class="justify-center">
-        <button id="btn-register" class="login btn">CADASTRE-SE</button>
-      </div>
-      <div>
-        <hr>
-      </div>
+      <img src="" alt="" class="logo">   
+      <h2>As Doceiras</h2>
+      <form class="form-registration" action="">    
+        <input type="text" id="nome-sobrenome" class="nome-sobrenome" placeholder="Nome e Sobrenome"><br>
+        <input type="email" id="email" class="email" placeholder="E-mail"><br>
+        <input type="password" id="password" class="input" placeholder="Senha"><br>
+        <input type="password" id="password" class="input" placeholder="Confirme sua senha"><br>
+      </form>
+      <button id="btn-register" class="login btn">CADASTRE-SE</button>
+      <hr>
       <h4>Ja tem cadastro? <span><a href="/login" id="login">Faça o login.</a></span></h4>
       <form>
         <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
       </form>
-    
-   
     `;
   
     rootElement.innerHTML = container;

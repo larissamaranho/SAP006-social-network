@@ -1,18 +1,28 @@
-
-
-
-h2{
+.img-login {
     text-align: center;
 }
 
-.containerLogin{
-    display: flex;
-    margin: auto;
-    
+h2{
+    text-align: center;
 }
 
 .bg-desktop{
     opacity: 100%;
 }
 
+.container-login{
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.ou {
+    text-align: center;
+}
+
+.checkbox-login {
+    text-align: center;
+}
 
