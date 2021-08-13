@@ -1,9 +1,22 @@
-.google{
-display: flex;
-  align-items: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-evenly;
-  margin-top: 2%;
+
+body{
+  background-image: url(/img/bg-desktop.jpg);
+  background-size: cover;
+}
+
+.home{
+  text-align: center;
+  background-image: url();
+}
+
+.btn{
+  width: 100%;
+  max-width: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-start{
+  height: auto;
+  width: auto;
 }
