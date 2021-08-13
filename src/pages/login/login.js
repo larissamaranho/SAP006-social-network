@@ -3,27 +3,28 @@ import { route } from "../../routes.js";
 export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
-    <Header class="imgHeaderLogin">
-    <img class="logoCelular" src=".src/img/logo-login.png>
-        <section>
-        <h2>As Doceiras</h2>
-      </section>
+    <header class="img-login">
+      <img class="logo-cel" src="./img/logo-login.png">
     </header>  
+    <div>
+    <h2>As Doceiras</h2>
     </div>
-      <div class="containerLogin">
-      <input type="text" id="email" class="input" placeholder="Email">
-      <input type="password" id="password" class="input" placeholder="Senha">
+    <form class="container-login" action="">
+      <input type="text" id="email" class="input" placeholder="Email"><br>
+      <input type="password" id="password" class="input" placeholder="Senha"><br>
       <a class="reset-password" id="reset" href="/reset">Esqueceu a senha?</a><br>
+    </form>
+    <form class="checkbox-login">
+      <input type="checkbox"name="remember"><label for="remember">Lembrar meus dados</label>
+    </form>
+    <div class="container-login">
+      <button id="btn-login" class="login btn">ENTRAR</button>
     </div>
-    <div class="google">
-      <button id="btn-login" class="login btn">LOGIN</button>
-    </div>
+    <hr>
     <h4>Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span></h4>
     <div class="ou"> Ou </div>
     <h4>Faça o login com o <span><a href="/signup" id="signup">Google</a></span></h4>
-    <form>
-      <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
-    </form>
+
   </div> 
   `;
 

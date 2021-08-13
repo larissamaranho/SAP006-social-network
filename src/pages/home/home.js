@@ -2,8 +2,8 @@ import { route } from "../../routes.js";
 export const home = () => {
     const rootElement = document.createElement("div");
     const container = `
-    <header class="imgHomeLogin">
-        <img class="logoDoce" src="img/logo-home.jpg>
+    <header class="img-home">
+        <img class="logoDoce" src="./img/logo-home-1.png">
         <section>
         <h2>As Doceiras</h2>
       </section>

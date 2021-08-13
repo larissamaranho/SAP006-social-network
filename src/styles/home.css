@@ -1,11 +1,9 @@
-
-.imgHome{
-  image-orientation: from-image;
+.img-home{
+  text-align: center;
 }
 
 .home{
   text-align: center;
-  background-image: url();
 }
 
 .btn{
@@ -13,9 +11,4 @@
   max-width: 100px;
   margin: 0 auto;
   text-align: center;
-}
-
-.btn-start{
-  height: auto;
-  width: auto;
 }
