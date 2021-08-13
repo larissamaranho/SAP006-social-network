@@ -5,8 +5,8 @@ export const registration = () => {
         <section>
           <h2>As Doceiras</h2>
         </section>
-        </div>
-      
+      </div>
+      <div class="containerInputs">
         <div class="label-float">
           <input type="text" id="nome" class="nome" placeholder="Nome">
         </div>
@@ -34,7 +34,7 @@ export const registration = () => {
         <input type="checkbox" class="checkbox" name="remember"><label for="remember">Lembrar meus dados</label>
       </form>
     
-    </div> 
+   
     `;
   
     rootElement.innerHTML = container;

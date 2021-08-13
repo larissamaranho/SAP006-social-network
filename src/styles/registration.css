@@ -1,5 +1,9 @@
 .container{
     display: flex;
-    justify-content: space-between
 }
     
+.containerInputs{
+    display: flex;
+    align-content: center;
+
+}
