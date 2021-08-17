@@ -1,5 +1,6 @@
 .img-login {
     text-align: center;
+    margin-top: 20px;
 }
 
 h2{
@@ -24,5 +25,23 @@ h4 {
 
 .checkbox-login {
     text-align: center;
+}
+
+.login-btn{
+    width: 250px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .login-btn{
+        background-color:#e6e6e6;
+    }
+    
+
+}
+
+@media(min-width: 1024px){
+    .login-btn{
+        background-color:#e6e6e6;
+    }
 }
 

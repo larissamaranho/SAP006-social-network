@@ -18,7 +18,7 @@ export const login = () => {
       <input type="checkbox"name="remember"><label for="remember">Lembrar meus dados</label>
     </form>
     <div class="container-login">
-      <button id="btn-login" class="login btn">ENTRAR</button>
+      <button id="btn-login" class="login-btn">ENTRAR</button>
     </div>
     <hr>
     <h4>Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span></h4>
