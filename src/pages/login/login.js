@@ -23,7 +23,8 @@ export const login = () => {
     <hr>
     <h4>Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span></h4>
     <div class="ou"> Ou </div>
-    <h4>Faça o login com o <span><a href="/signup" id="signup">Google</a></span></h4>
+    <button id="btn-google" class="btn-google">GOOGLE</button>
+    
 
   </div> 
   `;
@@ -38,6 +39,17 @@ export const login = () => {
     };
     loginEmail();
   });
+
+  const btnGoogle = rootElement.querySelector("#btn-google");
+   btnGoogle.addEventListener('click',(event)=>{
+     event.preventDefault();
+     const provider = new firebase.auth.GoogleAuthProvider();
+     firebase.auth().signInWithRedirect(provider);
+     const loginGoogle = () =>{
+       route("/feed");
+     };
+     loginGoogle();
+   })
   /*const btnGoogle = rootElement.querySelector("#icon-google");
   const email = rootElement.querySelector('#email');
   const password = rootElement.querySelector('#password');
