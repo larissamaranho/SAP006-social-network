@@ -47,8 +47,8 @@ firebase.auth().signOut().then(() => {
 
 //myFunction();
 
-const email = 'larissamaranhor@gmail.com';
-const password = '123456';
+//const email = 'larissamaranhor@gmail.com';
+//const password = '123456';
   //login novo usuario
   
 /*firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -66,7 +66,7 @@ const password = '123456';
   });*/
 
 
-  //login usuario existente
+  /*login usuario existente
   firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in
@@ -86,4 +86,4 @@ const password = '123456';
     // Sign-out successful.
   }).catch((error) => {
     // An error happened.
-  });
+  });*/

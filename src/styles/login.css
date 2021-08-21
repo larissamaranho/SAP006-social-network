@@ -1,9 +1,10 @@
 .img-login {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 20%;
+    flex-wrap: wrap;
 }
 
-h2{
+.title{
     text-align: center;
 }
 
@@ -11,15 +12,22 @@ h2{
     opacity: 100%;
 }
 
-.container-login{
+.container-login {
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.container-reset{
     text-align: center;
 }
 
-h4 {
-    text-align: center;
+.container-password{
+    margin-bottom: 50%;
 }
 
-.ou {
+.register-login {
     text-align: center;
 }
 
@@ -27,15 +35,23 @@ h4 {
     text-align: center;
 }
 
-.login-btn{
-    width: 250px;
+.container-btn{
+    text-align: center;
+}
+
+.input{
+    margin: 1%;
+}
+
+.line{
+    width: 95%;
+    margin: 2%;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .login-btn{
-        background-color:#e6e6e6;
-    }
-    
+        background-color:red;
+    } 
 
 }
 
@@ -45,3 +61,14 @@ h4 {
     }
 }
 
+.btn-google{
+    background-image: url('/img/btn-google.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    text-align: center;
+}    

@@ -10,20 +10,19 @@ body {
     background-image: url('./images/bg-desktop.jpg');
     background-repeat: no-repeat;
     background-size: cover; 
-    background-attachment: fixed;
-    
+    background-attachment: fixed;  
 }
 
 .form-registration {
     text-align: center;
     margin-top: 100px;
-
-    
+    display: flex;
+    flex-direction: column;
 }
 
 .btn-register{
-     width: 250px;
-     position:absolute;
-     margin-top: 110px;
-     margin-left: 250px;
-    }
+    width: 250px;
+    position:absolute;
+    margin-top: 110px;
+    margin-left: 250px;
+}
