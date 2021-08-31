@@ -6,14 +6,10 @@ export const registration = () => {
       <img src="" alt="" class="logo">   
       <h2>Registre-se</h2>
       <form id="form-registration" class="form-registration">    
-       
         <input type="email" id="cad-email" class="email" placeholder="E-mail"><br>
         <input type="password" id="cad-password" class="password" placeholder="Senha"><br>
         <button id="btn-registration" class="btn-register">CADASTRE-SE</button>
       </form>
-      
-      
-      
       <hr>
       <h4>Ja tem cadastro? <span><a href="/login" id="login">Faça o login.</a></span></h4>
       <form>

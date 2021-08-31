@@ -24,3 +24,14 @@ export const createAccount = (email, password, confirmPassword) => {
     });
 };
 
+
+const auth = firebase.auth()
+
+// login exportado do firebase
+export const loginWithEmail = (email, password) => auth.signInWithEmailAndPassword(email, password)
+
+// login google exportado do firebase
+export const loginWithGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  return auth.signInWithRedirect(provider)
+}
