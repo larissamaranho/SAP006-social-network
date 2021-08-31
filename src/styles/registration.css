@@ -6,13 +6,6 @@
     font-family: 'Poppins';
 }
 
-body {
-    background-image: url('./images/bg-desktop.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-attachment: fixed;  
-}
-
 .form-registration {
     text-align: center;
     margin-top: 100px;

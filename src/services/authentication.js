@@ -33,5 +33,26 @@ export const loginWithEmail = (email, password) => auth.signInWithEmailAndPasswo
 // login google exportado do firebase
 export const loginWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  return auth.signInWithRedirect(provider)
+  return firebase.auth().signInWithPopup(provider)
+    .then((result) => result)
+}
+
+// função para criar posts
+export const createPost = (inputText, inputName) => {
+  const userConnected = firebase.auth().currentUser // pega dados do usuario que está conectado
+  const posts = firebase.firestore().collection("Posts").add({
+    name: inputName,
+    email: userConnected.email,
+    data: (new Date()).toString().slice(4,21),
+    post: inputText, 
+    like: []
+  })
+return posts
+}
+
+// função para mostrar os posts
+export const showPostFeed = (addPost) => {
+  firebase.firestore().collection("Posts").onSnapshot((post) => {
+    post.forEach((post) => addPost(post))
+  })
 }
