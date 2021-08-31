@@ -31,6 +31,11 @@ export const login = () => {
 
   rootElement.innerHTML = container;
 
+  const email = rootElement.querySelector("#email")
+  console.log(email)
+  const password = rootElement.querySelector("#password")
+  console.log(password)
+
   // login com email e senha cadastrados
   const btnLogin = rootElement.querySelector('#btn-login');
   btnLogin.addEventListener("click", (event) => {
@@ -41,7 +46,7 @@ export const login = () => {
         route("/feed");
         return user;
       })
-      .catch((error) => {
+/*      .catch((error) => {
         const errorCode = error.code;
         let errorMessage = error.message;
         const errorMsg = document.querySelector('#message-error');
@@ -56,7 +61,7 @@ export const login = () => {
           errorMsg.innerHTML = errorMessage;
         }
         return error;
-      });
+      });*/
   })
 
   // login com o google
@@ -65,7 +70,7 @@ export const login = () => {
     event.preventDefault();
     loginWithGoogle()
       .then(() => {
-        route("/feed")
+       route("/feed")
       })
       .catch((error) => {
         const errorCode = error.code;
