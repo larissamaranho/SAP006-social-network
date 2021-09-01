@@ -52,7 +52,7 @@ return posts
 
 // função para mostrar os posts
 export const showPostFeed = (addPost) => {
-  firebase.firestore().collection("Posts").onSnapshot((post) => {
-    post.forEach((post) => addPost(post))
+  firebase.firestore().collection("Posts").onSnapshot((posts) => {
+    posts.forEach((post) => addPost(post))
   })
 }

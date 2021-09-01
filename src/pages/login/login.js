@@ -6,7 +6,7 @@ export const login = () => {
   const container = `
   <header class="img-login">
   <img class="logo-cel" src="./img/logo-login.png">
-</header>  
+  </header>  
   <h2 class="title">As Doceiras</h2>
     <p id="message-error" class="message-error">
   <form class="container-login" action="">
@@ -46,6 +46,9 @@ export const login = () => {
         route("/feed");
         return user;
       })
+
+      
+      
 /*      .catch((error) => {
         const errorCode = error.code;
         let errorMessage = error.message;

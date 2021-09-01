@@ -33,7 +33,7 @@ export const feed = () => {
    const clearPost = () => {
       postText.value = '';
       nameUser.value = '';
-   }
+    }
 
     sendPost.addEventListener('click', (e) => {
       e.preventDefault();
@@ -53,7 +53,7 @@ export const feed = () => {
         <div id="datePost">${data.data().data}</div>
       </section> 
       <div id="getPosts">${data.data().post}</div>
-      <button id="like">LIKE</button>
+      <button id="like" data-like="99999">LIKE</button>
       <span id="numberLike">${data.data().like.length}</span>
       `;
 
