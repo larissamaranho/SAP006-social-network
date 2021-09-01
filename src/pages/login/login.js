@@ -1,6 +1,7 @@
 import { route } from "../../routes.js";
 import { loginWithEmail, loginWithGoogle } from "../../services/authentication.js";
 
+
 export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
@@ -71,6 +72,8 @@ export const login = () => {
   const btnGoogle = rootElement.querySelector('#btn-google');
   btnGoogle.addEventListener('click', (event) => {
     event.preventDefault();
+    //const provider = new firebase.auth.GoogleAuthProvider();
+    // firebase.auth().signInWithRedirect(provider);
     loginWithGoogle()
       .then(() => {
        route("/feed")
@@ -82,27 +85,6 @@ export const login = () => {
       });
   })
   // falta criar página de erro
-
-  /*const btnLogin = rootElement.querySelector("#btn-login");
-  btnLogin.addEventListener('click', (event) => { 
-    event.preventDefault(); 
-    const loginEmail = () => { 
-      route("/feed");
-    };
-    loginEmail();
-  });
-
-  const btnGoogle = rootElement.querySelector("#btn-google");
-   btnGoogle.addEventListener('click',(event)=>{
-     event.preventDefault();
-     const provider = new firebase.auth.GoogleAuthProvider();
-     firebase.auth().signInWithRedirect(provider);
-     const loginGoogle = () =>{
-       route("/feed");
-     };
-     loginGoogle();
-   })*/
-   
 
   return rootElement;
 };

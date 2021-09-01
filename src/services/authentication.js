@@ -43,7 +43,7 @@ export const createPost = (inputText, inputName) => {
   const posts = firebase.firestore().collection("Posts").add({
     name: inputName,
     email: userConnected.email,
-    data: (new Date()).toString().slice(4,21),
+    data: new Date(),    //(new Date()).toString().slice(4,21),
     post: inputText, 
     like: []
   })
@@ -51,8 +51,12 @@ return posts
 }
 
 // função para mostrar os posts
-export const showPostFeed = (addPost) => {
-  firebase.firestore().collection("Posts").onSnapshot((posts) => {
-    posts.forEach((post) => addPost(post))
+/*export const showPostFeed = (addPost) => {
+  firebase.firestore().collection("Posts").onSnapshot((post) => {
+    post.forEach((post) => addPost(post))
   })
-}
+}*/
+
+export const showPostFeed = () => firebase.firestore().collection("Posts").orderBy("data","desc").get();
+    
+  
