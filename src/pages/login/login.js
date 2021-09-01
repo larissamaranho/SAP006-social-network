@@ -1,11 +1,6 @@
 import { route } from "../../routes.js";
 import { loginWithEmail, loginWithGoogle } from "../../services/authentication.js";
-import { GoogleAuthProvider } from "firebase/auth";
-import { getAuth, signInWithRedirect } from "firebase/auth";
 
-const auth = getAuth();
-signInWithRedirect(auth, provider);
-const provider = new GoogleAuthProvider();
 
 export const login = () => {
   const rootElement = document.createElement("div");

@@ -1,5 +1,6 @@
 import {createPost, showPostFeed} from "../../services/authentication.js";
 
+
 export const feed = () => {
     const rootElement = document.createElement("div");
     const container = `
@@ -35,18 +36,11 @@ export const feed = () => {
       nameUser.value = '';
    }
 
-    sendPost.addEventListener('click', (e) => {
-      e.preventDefault();
-      const posts = postText.value;
-      const name = nameUser.value;
-      createPost(posts, name)
-      clearPost();
-    });
-
+    
     //função para mostrar os dados dos posts
     const viewPost = (data) => {
       const templateFeed = `
-      <div id="${data.id}">
+      <li id="${data.id}">
       <section>
         <div id="userName">${data.data().name}</div>
         <div id="userEmail">${data.data().email}</div>
@@ -55,11 +49,32 @@ export const feed = () => {
       <div id="getPosts">${data.data().post}</div>
       <button id="like">LIKE</button>
       <span id="numberLike">${data.data().like.length}</span>
+      </li>
       `;
 
-      showPost.innerHTML += templateFeed;
+      showPost.innerHTML+=templateFeed;
       
     };
-    showPostFeed(viewPost);
+
+    function loadPost(){
+      showPostFeed().then((snapshot)=>{
+        snapshot.forEach((post)=>{
+          viewPost(post)
+        })
+      })
+    }
+    sendPost.addEventListener('click', (e) => {
+      e.preventDefault();
+      const posts = postText.value;
+      const name = nameUser.value;
+      createPost(posts, name)
+      clearPost();
+      showPost.innerHTML="";
+      loadPost();
+    });
+
+    //showPostFeed(viewPost);
+    loadPost();
+
     return rootElement;
 };
