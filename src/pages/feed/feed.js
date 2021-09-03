@@ -30,6 +30,7 @@ export const feed = () => {
     const sendPost = rootElement.querySelector('#btnSendPost');
     const nameUser = rootElement.querySelector('#nameUser');
     const showPost = rootElement.querySelector('#postList');
+    
 
    const clearPost = () => {
       postText.value = '';
@@ -40,20 +41,29 @@ export const feed = () => {
     //função para mostrar os dados dos posts
     const viewPost = (data) => {
       const templateFeed = `
-      <li id="${data.id}">
+      <li data-post id="${data.id}">
       <section>
         <div id="userName">${data.data().name}</div>
         <div id="userEmail">${data.data().email}</div>
         <div id="datePost">${data.data().data}</div>
       </section> 
       <div id="getPosts">${data.data().post}</div>
-      <button id="like">LIKE</button>
+      <button data-like id="like">LIKE</button>
       <span id="numberLike">${data.data().like.length}</span>
       </li>
       `;
 
       showPost.innerHTML+=templateFeed;
-      
+
+      const listPost = rootElement.querySelector('[data-post]')
+      console.log(listPost);
+      //btnlike
+      listPost.addEventListener('click',(e)=>{
+        console.log(e.target)
+        const btnLike = rootElement.querySelector('[data-like]')
+        if (e.target === btnLike){
+          btnLike.style.backgroundColor = "red"}
+      })
     };
 
     function loadPost(){

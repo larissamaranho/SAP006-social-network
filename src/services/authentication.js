@@ -33,8 +33,9 @@ export const loginWithEmail = (email, password) => auth.signInWithEmailAndPasswo
 // login google exportado do firebase
 export const loginWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  return firebase.auth().signInWithPopup(provider)
-    .then((result) => result)
+ return firebase.auth().signInWithPopup(provider)
+   .then((result) => result)
+   // .catch((error)=> error)
 }
 
 // função para criar posts
@@ -45,7 +46,9 @@ export const createPost = (inputText, inputName) => {
     email: userConnected.email,
     data: new Date(),    //(new Date()).toString().slice(4,21),
     post: inputText, 
-    like: []
+    like: [],
+    idUser:userConnected.uid,
+    idPost:""
   })
 return posts
 }
