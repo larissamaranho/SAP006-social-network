@@ -6,10 +6,10 @@ export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
   <header class="img-login">
-  <img class="logo-cel" src="./img/logo-login.png">
+    <img class="logo-cel" src="./img/logo-login.png">
   </header>  
   <h2 class="title">As Doceiras</h2>
-    <p id="message-error" class="message-error">
+  <p id="message-error" class="message-error">
   <form class="container-login" action="">
     <input type="text" id="email" class="input" placeholder="Email"><br>
     <input type="password" id="password" class="input" placeholder="Senha"><br>
@@ -17,17 +17,17 @@ export const login = () => {
   <div class="container-reset">
     <a class="reset-password" id="reset" href="/reset">Esqueceu a senha?</a><br>
   </div>
-  <form class="checkbox-login">
-    <input type="checkbox"name="remember"><label for="remember">Lembrar meus dados</label>
-  </form>
-  <div class="container-btn">
-    <button id="btn-login" class="login-btn">ENTRAR</button>
-  </div>
-  <hr class="line">
+<form class="checkbox-login">
+  <input type="checkbox"name="remember"><label for="remember">Lembrar meus dados</label>
+</form>
+<div class="container-btn">
+  <button id="btn-login" class="login-btn">ENTRAR</button>
+</div>
+<hr class="line">
   <h4 class="register-login">Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span><br> Ou </h4>
-  <div class="container-btn">
-    <button id="btn-google" class="btn-google" type="onLoad"></button>
-  </div>
+<div class="container-btn">
+  <button id="btn-google" class="btn-google" type="onLoad"></button>
+</div>
   `;
 
   rootElement.innerHTML = container;
@@ -70,10 +70,7 @@ export const login = () => {
 
   // login com o google
   const btnGoogle = rootElement.querySelector('#btn-google');
-  btnGoogle.addEventListener('click', (event) => {
-    event.preventDefault();
-    //const provider = new firebase.auth.GoogleAuthProvider();
-    // firebase.auth().signInWithRedirect(provider);
+  btnGoogle.addEventListener('click', () => {
     loginWithGoogle()
       .then(() => {
        route("/feed")
@@ -85,6 +82,6 @@ export const login = () => {
       });
   })
   // falta criar página de erro
-
+  
   return rootElement;
 };
