@@ -1,8 +1,8 @@
-import {createPost, showPostFeed} from "../../services/authentication.js";
+import { createPost, showPostFeed } from "../../services/authentication.js";
 
 export const feed = () => {
-    const rootElement = document.createElement("div");
-    const container = `
+  const rootElement = document.createElement("div");
+  const container = `
     <div class="container-feed">
     <nav class="nav-bar">
       <img class="logoPageFeed" src="./img/logo-nome.png" alt="logo">
@@ -23,43 +23,56 @@ export const feed = () => {
   </div>
   `;
 
-    rootElement.innerHTML = container;
+  rootElement.innerHTML = container;
 
-    const postText = rootElement.querySelector('#postText');
-    const sendPost = rootElement.querySelector('#btnSendPost');
-    const nameUser = rootElement.querySelector('#nameUser');
-    const showPost = rootElement.querySelector('#postList');
+  const postText = rootElement.querySelector('#postText');
+  const sendPost = rootElement.querySelector('#btnSendPost');
+  const nameUser = rootElement.querySelector('#nameUser');
+  const showPost = rootElement.querySelector('#postList');
 
-   const clearPost = () => {
-      postText.value = '';
-      nameUser.value = '';
-    }
+  const clearPost = () => {
+    postText.value = '';
+    nameUser.value = '';
+  }
 
-    sendPost.addEventListener('click', (e) => {
-      e.preventDefault();
-      const posts = postText.value;
-      const name = nameUser.value;
-      createPost(posts, name)
-      clearPost();
-    });
-
-    //função para mostrar os dados dos posts
-    const viewPost = (data) => {
-      const templateFeed = `
-      <div id="${data.id}">
+  //função para mostrar os dados dos posts
+  const viewPost = (data) => {
+    const templateFeed = `
+      <li id="${data.id}">
       <section>
         <div id="userName">${data.data().name}</div>
         <div id="userEmail">${data.data().email}</div>
         <div id="datePost">${data.data().data}</div>
       </section> 
       <div id="getPosts">${data.data().post}</div>
-      <button id="like" data-like="99999">LIKE</button>
+      <button id="like">LIKE</button>
       <span id="numberLike">${data.data().like.length}</span>
-      `;
+      </li>
+  `;
 
-      showPost.innerHTML += templateFeed;
-      
-    };
-    showPostFeed(viewPost);
-    return rootElement;
+    showPost.innerHTML += templateFeed;
+
+  };
+
+  function loadPost() {
+    showPostFeed().then((snapshot) => {
+      snapshot.forEach((post) => {
+        viewPost(post)
+      })
+    })
+  }
+  sendPost.addEventListener('click', (e) => {
+    e.preventDefault();
+    const posts = postText.value;
+    const name = nameUser.value;
+    createPost(posts, name)
+    clearPost();
+    showPost.innerHTML = "";
+    loadPost();
+  });
+
+  //showPostFeed(viewPost);
+  loadPost();
+
+  return rootElement;
 };
