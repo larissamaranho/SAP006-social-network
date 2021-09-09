@@ -15,6 +15,9 @@ export const viewPost = (data) => {
       <div id="getPosts">${data.data().post}</div>
       <button data-like="${data.id}" id="${data.id}">LIKE</button>
       <span data-numberLike="${data.id}" id="numberLike">${data.data().like.length}</span>
+      <button data-remove="${data.id}" id="${data.id}">Deletar</button>
+      <button data-edit="${data.id}" id="${data.id}">Editar</button>
+    
       `;
 
     section.innerHTML += templateFeed;

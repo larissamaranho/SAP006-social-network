@@ -5,18 +5,15 @@ export const feed = () => {
   console.log(firebase.auth().currentUser)
   const rootElement = document.createElement("div");
   const container = `
-    <div class="container-feed">
-    <nav class="nav-bar">
-      <img class="logoPageFeed" src="./img/logo-nome.png" alt="logo">
-      <h2 class="photo">Feed</h2>
-      <button class="btn btn-logout" type="button" id="btn-logout"><i class="fas fa-sign-out-alt"></i></button>
-    </nav>
+  <header class="img-home">
+        <img class="logoDoce" src="./img/logo-home-1.png">
+        <button class="btn-logout" id="btn-logout">Sair</button>
+      </header>
     <section>
         <form class="form-post" id="container-post"> 
           <div class="post">
-            <input type="text" id="nameUser">
+            <input type="text" id="nameUser"><br>
             <textarea id="postText" type="textarea" class="new-post" placeholder="Novo Post"></textarea> 
-            <img src="img/icone-img.png" class="img-photo" id="btn-photo" type="button">
             <button id="btnSendPost" type="submit" class="btn-publicar">Publicar</button>
           </div>
         </form>
