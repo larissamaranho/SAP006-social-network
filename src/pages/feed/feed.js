@@ -1,4 +1,5 @@
-import { createPost, showPostFeed } from "../../services/authentication.js";
+import { createPost, showPostFeed, signOut } from "../../services/authentication.js";
+import { route } from "../../route.js";
 import { viewPost } from "./post.js";
 
 export const feed = () => {
@@ -9,7 +10,7 @@ export const feed = () => {
     <nav class="nav-bar">
       <img class="logoPageFeed" src="./img/logo-nome.png" alt="logo">
       <h2 class="photo">Feed</h2>
-      <button class="btn btn-logout" type="button" id="btn-logout"><i class="fas fa-sign-out-alt"></i></button>
+      <button class="btn-logout" type="button" id="btnLogout">Sair</button>
     </nav>
     <section>
         <form class="form-post" id="container-post"> 
@@ -31,6 +32,7 @@ export const feed = () => {
   const sendPost = rootElement.querySelector('#btnSendPost');
   const nameUser = rootElement.querySelector('#nameUser');
   const showPost = rootElement.querySelector('#postList');
+  const btnLogout = rootElement.querySelector('#btnLogout');
 
   const clearPost = () => {
     postText.value = '';
@@ -55,9 +57,22 @@ export const feed = () => {
     showPost.innerHTML = "";
     loadPost();
   });
+
+  btnLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    signOut().then(() => route('/login'))
+      .catch(() => {
+        error('Tente novamente.');
+      });
+  });
+
+
+
+
   
   //showPostFeed(viewPost);
   loadPost();
+
 
   return rootElement;
 };

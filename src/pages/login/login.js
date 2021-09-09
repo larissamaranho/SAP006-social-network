@@ -1,7 +1,6 @@
 import { route } from "../../route.js";
 import { loginWithEmail, loginWithGoogle } from "../../services/authentication.js";
 
-
 export const login = () => {
   const rootElement = document.createElement("div");
   const container = `
