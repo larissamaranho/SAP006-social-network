@@ -1,4 +1,4 @@
-import { likePost, getPost, unLikePost, editPost } from '../../services/authentication.js';
+import { likePost, getPost, unLikePost, editPost, deletePost } from '../../services/authentication.js';
 export const viewPost = (data) => {
     const likeArray = data.data().like;
     const section = document.createElement("li");
@@ -25,10 +25,13 @@ export const viewPost = (data) => {
 
     section.innerHTML += templateFeed;
   
-    const listPost = section.querySelector('[data-post]')
-    
-    const likeButton = section.querySelector(`[data-like="${data.id}"]`)
-    console.log(likeButton)
+    const listPost = section.querySelector('[data-post]');
+    const likeButton = section.querySelector(`[data-like="${data.id}"]`);
+    const textAreaPost = section.querySelector(`[data-text="${data.id}"]`);
+    const btnSave = section.querySelector(`[data-save="${data.id}"]`);
+    const btnEdit = section.querySelector(`[data-edit="${data.id}"]`);
+    const btnDelete = section.querySelector(`[data-delete="${data.id}"]`);
+  
     likeButton.addEventListener('click',(e) => {
       const likeCount = section.querySelector(`[data-numberLike="${data.id}"]`)
       const numberLike = Number(likeCount.innerText)
@@ -54,10 +57,6 @@ export const viewPost = (data) => {
       }
     })
     
-    const textAreaPost = section.querySelector(`[data-text="${data.id}"]`);
-    const btnSave = section.querySelector(`[data-save="${data.id}"]`);
-
-    const btnEdit = section.querySelector(`[data-edit="${data.id}"]`);
     btnEdit.addEventListener('click', (e) => {
       textAreaPost.removeAttribute('disabled');
       btnSave.style.display = "block";
@@ -69,6 +68,13 @@ export const viewPost = (data) => {
       .then(() => {
       textAreaPost.setAttribute('disabled', "")
       btnSave.style.display = "none";
+      })
+    })
+
+    btnDelete.addEventListener('click', (e) => {
+      deletePost(idPost)
+      .then(() => {
+        section.remove();
       })
     })
 
