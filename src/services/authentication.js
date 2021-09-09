@@ -24,7 +24,6 @@ export const createAccount = (email, password, confirmPassword) => {
     });
 };
 
-
 const auth = firebase.auth()
 
 // login exportado do firebase
@@ -34,7 +33,7 @@ export const loginWithEmail = (email, password) => auth.signInWithEmailAndPasswo
 export const loginWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
  return firebase.auth().signInWithPopup(provider)
-   .then((result) => result)
+   //.then((result) => result)
    // .catch((error)=> error)
 }
 
@@ -44,7 +43,7 @@ export const createPost = (inputText, inputName) => {
   const posts = firebase.firestore().collection("Posts").add({
     name: inputName,
     email: userConnected.email,
-    data: new Date(),    //(new Date()).toString().slice(4,21),
+    data: /*new Date(),*/   (new Date()).toString().slice(4,21),
     post: inputText, 
     like: [],
     idUser: userConnected.uid,
@@ -67,3 +66,5 @@ export const getPost = (idPost) => firebase.firestore().collection("Posts").doc(
 export const likePost = (idUser, idPost) => firebase.firestore().collection("Posts").doc(idPost).update({ like: firebase.firestore.FieldValue.arrayUnion(idUser)});
 
 export const unLikePost = (idUser, idPost) => firebase.firestore().collection("Posts").doc(idPost).update({ like: firebase.firestore.FieldValue.arrayRemove(idUser)});
+
+export const editPost = (textPost, idPost) => firebase.firestore().collection("Posts").doc(idPost).update({ post: textPost});
