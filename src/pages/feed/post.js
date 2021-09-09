@@ -1,4 +1,4 @@
-import { likePost, getPost, unLikePost } from '../../services/authentication.js';
+import { likePost, getPost, unLikePost, editPost } from '../../services/authentication.js';
 export const viewPost = (data) => {
     const likeArray = data.data().like;
     const section = document.createElement("li");
@@ -6,15 +6,21 @@ export const viewPost = (data) => {
     section.setAttribute("data-post", data.id);
     const idPost = data.id;
     const idUser = firebase.auth().currentUser.uid;
+    const textPost = data.data().post;
     const templateFeed = `
       <section>
         <div id="userName">${data.data().name}</div>
         <div id="userEmail">${data.data().email}</div>
         <div id="datePost">${data.data().data}</div>
       </section> 
-      <div id="getPosts">${data.data().post}</div>
-      <button data-like="${data.id}" id="${data.id}">LIKE</button>
-      <span data-numberLike="${data.id}" id="numberLike">${data.data().like.length}</span>
+      <textarea data-text="${data.id}" id="getPosts" disabled>${data.data().post}</textarea>
+      <section id="containerButtons">
+        <button data-like="${data.id}" id="${data.id}">Like</button>
+        <span data-numberLike="${data.id}" id="numberLike">${data.data().like.length}</span>
+        <button data-edit="${data.id}" id="${data.id}">Editar</button>
+        <button data-save="${data.id}" id="${data.id}" class="btnSave">Salvar</button>
+        <button data-delete="${data.id}" id="${data.id}">Excluir</button>
+      </section>
       `;
 
     section.innerHTML += templateFeed;
@@ -47,37 +53,24 @@ export const viewPost = (data) => {
         })
       }
     })
+    
+    const textAreaPost = section.querySelector(`[data-text="${data.id}"]`);
+    const btnSave = section.querySelector(`[data-save="${data.id}"]`);
 
-
-
-
-
-
-
-    //btnlike
-    /*section.addEventListener('click', (e) => {
-      const { target } = e;
-      const btnLike = target.dataset.like;
-      console.log(btnLike)
-      if (e.target === btnLike) {
-      const numberLike = section.querySelector(`[data-numberLike="${data.id}"]`);
-      console.log(numberLike.innerText)
-      btnLike.style.backgroundColor = "red";
-      sendLike(idPost, idUser, numberLike);
-      }
+    const btnEdit = section.querySelector(`[data-edit="${data.id}"]`);
+    btnEdit.addEventListener('click', (e) => {
+      textAreaPost.removeAttribute('disabled');
+      btnSave.style.display = "block";
     })
-  };
 
-  function sendLike(idPost, idUser, numberLike) {
-    const likeCount = Number(numberLike.innerText);
-    console.log(likeCount);
-      getPost(idPost).then((post) => {
-            if (!post.data().like.includes(idUser)){
-            likePost(idUser, idPost)
-            .then(() => {
-              numberLike.innerHTML = likeCount + 1;
-            })
-          }
-      }) */
+    btnSave.addEventListener('click', (e) => {
+      const newText = textAreaPost.value
+      editPost(newText, idPost)
+      .then(() => {
+      textAreaPost.setAttribute('disabled', "")
+      btnSave.style.display = "none";
+      })
+    })
+
       return section
   };

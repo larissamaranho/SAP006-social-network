@@ -1,4 +1,4 @@
-import { route } from "../../routes.js";
+import { route } from "../../route.js";
 import { loginWithEmail, loginWithGoogle } from "../../services/authentication.js";
 
 
@@ -47,25 +47,6 @@ export const login = () => {
         route("/feed");
         return user;
       })
-
-      
-      
-/*      .catch((error) => {
-        const errorCode = error.code;
-        let errorMessage = error.message;
-        const errorMsg = document.querySelector('#message-error');
-        if (errorCode === 'auth/invalid-email') {
-          errorMessage = 'Email inválido. Tente novamente';
-          errorMsg.innerHTML = errorMessage;
-        } else if (errorCode === 'auth/wrong-password') {
-          errorMessage = 'Email ou senha incorreto. Tente novamente';
-          errorMsg.innerHTML = errorMessage;
-        } else {
-          errorMessage = 'Usuário não cadastrado';
-          errorMsg.innerHTML = errorMessage;
-        }
-        return error;
-      });*/
   })
 
   // login com o google

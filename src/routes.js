@@ -20,9 +20,5 @@ const routeRender = () => {
 window.addEventListener("popstate", routeRender);
 
 window.addEventListener('load', routeRender)
-export const route = (state) => {
-    window.history.pushState({}, "", state)
-    const popStateEvent = new PopStateEvent("popstate", { state: {} });
-    dispatchEvent(popStateEvent);
-}
+
 console.log("pegou")
