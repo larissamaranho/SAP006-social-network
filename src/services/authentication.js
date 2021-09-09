@@ -24,7 +24,6 @@ export const createAccount = (email, password, confirmPassword) => {
     });
 };
 
-
 const auth = firebase.auth()
 
 // login exportado do firebase
@@ -44,7 +43,7 @@ export const createPost = (inputText, inputName) => {
   const posts = firebase.firestore().collection("Posts").add({
     name: inputName,
     email: userConnected.email,
-    data: new Date(),    //(new Date()).toString().slice(4,21),
+    data: /*new Date(),*/   (new Date()).toString().slice(4,21),
     post: inputText, 
     like: [],
     idUser: userConnected.uid,
@@ -53,12 +52,7 @@ export const createPost = (inputText, inputName) => {
 return posts
 }
 
-// função para mostrar os posts
-/*export const showPostFeed = (addPost) => {
-  firebase.firestore().collection("Posts").onSnapshot((post) => {
-    post.forEach((post) => addPost(post))
-  })
-}*/
+export const signOut = () => firebase.auth().signOut();
 
 export const showPostFeed = () => firebase.firestore().collection("Posts").orderBy("data","desc").get();
 
@@ -67,3 +61,9 @@ export const getPost = (idPost) => firebase.firestore().collection("Posts").doc(
 export const likePost = (idUser, idPost) => firebase.firestore().collection("Posts").doc(idPost).update({ like: firebase.firestore.FieldValue.arrayUnion(idUser)});
 
 export const unLikePost = (idUser, idPost) => firebase.firestore().collection("Posts").doc(idPost).update({ like: firebase.firestore.FieldValue.arrayRemove(idUser)});
+
+export const editPost = (textPost, idPost) => firebase.firestore().collection("Posts").doc(idPost).update({ post: textPost});
+
+export const deletePost = (idPost) => firebase.firestore().collection("Posts").doc(idPost).delete();
+
+export const confirmAction = (msg) => confirm(msg);

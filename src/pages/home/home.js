@@ -1,4 +1,4 @@
-import { route } from "../../routes.js";
+import { route } from "../../route.js";
 export const home = () => {
     const rootElement = document.createElement("div");
     const container = `

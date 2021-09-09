@@ -1,14 +1,17 @@
-import { createPost, showPostFeed } from "../../services/authentication.js";
+import { createPost, showPostFeed, signOut } from "../../services/authentication.js";
+import { route } from "../../route.js";
 import { viewPost } from "./post.js";
 
 export const feed = () => {
   console.log(firebase.auth().currentUser)
   const rootElement = document.createElement("div");
   const container = `
-  <header class="img-home">
-        <img class="logoDoce" src="./img/logo-home-1.png">
-        <button class="btn-logout" id="btn-logout">Sair</button>
-      </header>
+    <div class="container-feed">
+    <nav class="nav-bar">
+      <img class="logoPageFeed" src="./img/logo-nome.png" alt="logo">
+      <h2 class="photo">Feed</h2>
+      <button class="btn-logout" type="button" id="btnLogout">Sair</button>
+    </nav>
     <section>
         <form class="form-post" id="container-post"> 
           <div class="post">
@@ -28,40 +31,12 @@ export const feed = () => {
   const sendPost = rootElement.querySelector('#btnSendPost');
   const nameUser = rootElement.querySelector('#nameUser');
   const showPost = rootElement.querySelector('#postList');
+  const btnLogout = rootElement.querySelector('#btnLogout');
 
   const clearPost = () => {
     postText.value = '';
     nameUser.value = '';
   }
-
-  /*função para mostrar os dados dos posts
-  const viewPost = (data) => {
-    const templateFeed = `
-      <li data-post id="${data.id}">
-      <section>
-        <div id="userName">${data.data().name}</div>
-        <div id="userEmail">${data.data().email}</div>
-        <div id="datePost">${data.data().data}</div>
-      </section> 
-      <div id="getPosts">${data.data().post}</div>
-      <button data-like id="like">LIKE</button>
-      <span id="numberLike">${data.data().like.length}</span>
-      </li>
-      `;
-
-    showPost.innerHTML += templateFeed;
-
-    const listPost = rootElement.querySelector('[data-post]')
-    console.log(listPost);
-    //btnlike
-    listPost.addEventListener('click', (e) => {
-      console.log(e.target)
-      const btnLike = rootElement.querySelector('[data-like]')
-      if (e.target === btnLike) {
-        btnLike.style.backgroundColor = "red"
-      }
-    })
-  };*/
 
   function loadPost() {
     showPostFeed().then((snapshot) => {
@@ -81,9 +56,22 @@ export const feed = () => {
     showPost.innerHTML = "";
     loadPost();
   });
+
+  btnLogout.addEventListener('click', (e) => {
+    e.preventDefault();
+    signOut().then(() => route('/login'))
+      .catch(() => {
+        error('Tente novamente.');
+      });
+  });
+
+
+
+
   
   //showPostFeed(viewPost);
   loadPost();
+
 
   return rootElement;
 };
