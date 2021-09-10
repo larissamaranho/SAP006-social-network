@@ -10,7 +10,9 @@ export const feed = () => {
     <nav class="nav-bar">
       <img class="logoPageFeed" src="./img/logo-nome.png" alt="logo">
       <h2 class="photo">Feed</h2>
-      <button class="btn-logout" type="button" id="btnLogout">Sair</button>
+      <div class="div-logout">
+        <button class="btn-logout" type="button" id="btnLogout">Sair</button>
+      </div>
     </nav>
     <section>
         <form class="form-post" id="container-post"> 
@@ -21,7 +23,7 @@ export const feed = () => {
             <button id="btnSendPost" type="submit" class="btn-publicar">Publicar</button>
           </div>
         </form>
-      <ul id="postList" class="post-list" data-section></ul>
+      <div id="postList" class="post-list" data-section></div>
     </section>
   </div>
   `;
