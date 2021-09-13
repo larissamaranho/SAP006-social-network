@@ -1,10 +1,10 @@
-# Criando uma Rede Social
+# As Doceiras
 
 ## Índice
 
-- [1. Sobre o projeto](#1-prefácio)
-- [2. Resumo do projeto](#2-resumo-do-projeto)
-- [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
+- [1. Sobre o projeto](#1-sobre-o-projeto)
+- [2. Sobre o tema](#2-sobre-o-tema)
+- [3. Experiência dos usuários](#3-experiência-dos-usuários)
 - [4. Considerações gerais](#4-considerações-gerais)
 - [5. Critérios de aceitação mínimos do projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
 - [6. Hacker edition](#6-hacker-edition)
@@ -13,7 +13,9 @@
 
 ---
 
-## 1. Prefácio
+## 1. Sobre o projeto
+
+O projeto Social Network, foi criado dentro do bootcamp da Laboratória, com o intuito de nós, alunas da 6ª geração, estudarmos e colocarmos em prática os objetivos de aprendizagem. O tema do projeto era livre e o escolhido foi: "As Doceiras".
 
 Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. As redes sociais
 invadiram nossas vidas. Nós as amamos ou odiamos, e muitas pessoas não conseguem
@@ -25,20 +27,17 @@ para químicos onde os usuários podem publicar artigos a respeito de suas
 pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
 determinadas tags ou popularidade, mais recente ou mais comentado.
 
-## 2. Resumo do projeto
+## 2. Sobre o tema
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](<https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)>), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+Neste projeto costruímos uma Rede Social sobre o compartilhamento de receitas de doces em geral. A idéia era desenvolver uma página web simples e objetiva, onde o usuário conseguisse postar receitas que realmente funcionam, curtir, editar e deletar um post.
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+Este projeto foi desenvolvido em dupla, Larissa Maranho e Michele Martins, que além de programadora é doceira. A escolha do tema partiu de uma dificuldade real entre as profissionais, o acesso à receitas que realmente funcionam.
 
-## 3. Objetivos de aprendizagem
+## 3. Experiência dos usuários
 
+Criamos um formulário do Google para entender mais sobre as necissidades dos usuários, questionamos sobre o qual seria o contéudo ideal, se já trabalha no ramo da confeitaria e sobre qual seria a melhor maneira de visualizar as receitas. Além disso, perguntamos sobre as cores da aplicação.
+
+![img](src/img/form-pesquisa.gif)
 O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
 Application
 (SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
