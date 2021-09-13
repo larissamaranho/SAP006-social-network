@@ -2,7 +2,7 @@
 
 ## Índice
 
-- [1. Prefácio](#1-prefácio)
+- [1. Sobre o projeto](#1-prefácio)
 - [2. Resumo do projeto](#2-resumo-do-projeto)
 - [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
 - [4. Considerações gerais](#4-considerações-gerais)
