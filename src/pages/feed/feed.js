@@ -17,9 +17,8 @@ export const feed = () => {
     <section>
         <form class="form-post" id="container-post"> 
           <div class="post">
-            <input type="text" id="nameUser">
+            <input type="text" id="nameUser"><br>
             <textarea id="postText" type="textarea" class="new-post" placeholder="Novo Post"></textarea> 
-            <img src="img/icone-img.png" class="img-photo" id="btn-photo" type="button">
             <button id="btnSendPost" type="submit" class="btn-publicar">Publicar</button>
           </div>
         </form>
