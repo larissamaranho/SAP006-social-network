@@ -65,7 +65,7 @@ export const viewPost = (data) => {
 
     btnSave.addEventListener('click', (e) => {
       const newText = textAreaPost.value
-      editPost(newText, idPost)
+      editPost(newText, idPost,idUser)
       .then(() => {
       textAreaPost.setAttribute('disabled', "")
       btnSave.style.display = "none";
@@ -73,7 +73,7 @@ export const viewPost = (data) => {
     })
 
     btnDelete.addEventListener('click', (e) => {
-      deletePost(idPost)
+      deletePost(idPost,idUser)
       .then(() => {
         section.remove();
       })

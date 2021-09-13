@@ -1,0 +1,31 @@
+button.data-like{
+        background-image: url(img/coracao.png);
+        background-color: #e7e9f1;
+        color: #385596;
+        background-size: 30px;
+        background-position: 10px 35%;
+        background-repeat: no-repeat;
+        width: 45px;
+        height: 40px;
+        font-size: 20px;
+        border: 1px solid #fff;
+        text-align: center;
+        text-indent: 7px;
+        position: absolute;
+        bottom: 97px;
+        left: 780px;
+    
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+        .login-btn{
+            background-color:red;
+        } 
+    
+    }
+    
+    @media(min-width: 1024px){
+        .login-btn{
+            background-color:#e6e6e6;
+        }
+    }
