@@ -26,4 +26,9 @@
     .post {
         width: 80vw;
     }
+    .img-login {
+        text-align: center;
+        margin-top: 15vw;
+        width: 60vw;
+    }
 }

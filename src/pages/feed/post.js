@@ -44,7 +44,7 @@ export const viewPost = (data) => {
         .then(() => {
           likeArray.push(idUser)
           likeCount.innerHTML = numberLike + 1;
-          likeButton.style.backgroundColor = "red";
+          likeButton.style.backgroundImage = "candy.png";
         })
       }  
       else {
@@ -53,7 +53,7 @@ export const viewPost = (data) => {
           const likeIndex = likeArray.indexOf(idUser);
           likeArray.splice(likeIndex, 1);
           likeCount.innerHTML = numberLike - 1;
-          likeButton.style.backgroundColor = "green";
+          likeButton.style.backgroundImage = "candy-unlike.png";
         })
       }
     })

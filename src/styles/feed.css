@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url('./images/bg-feed.jpg');
+    background-image: url('./img/bg-feed.jpg');
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed;  
@@ -134,8 +134,8 @@ body {
 
 .btn-class {
     margin: 0.2rem 0.5rem;
-    background-color: #e6a7e6ed;
-    border: 1px solid #703f70;
+    background-color: #d5c9d5;
+    border: 1px solid #d5c9d5;
     outline: none;
     padding: 0.1rem 0.5rem;
     border-radius: 5px;
@@ -146,20 +146,22 @@ body {
     background: none;
     border: none;
     outline: none;
+    background-image: url(../img/candy-unliked.png);
 }
 
 button {
     cursor: pointer;
 }
 
-section {
+/*section {
     width: 50vw;
-}
+}*/
 
 .btnSave{
-    background-color: #e6a7e6ed;
-    border: 1px solid #703f70;
+    background-color: #d5c9d5;
+    border: 1px solid #d5c9d5;
     outline: none;
     padding: 0.1rem 0.5rem;
     border-radius: 5px;
+    display: none;
 }

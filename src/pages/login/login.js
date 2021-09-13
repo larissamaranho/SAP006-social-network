@@ -12,21 +12,15 @@ export const login = () => {
   <form class="container-login" action="">
     <input type="text" id="email" class="input" placeholder="Email"><br>
     <input type="password" id="password" class="input" placeholder="Senha"><br>
-  </form>
-  <div class="container-reset">
-    <a class="reset-password" id="reset" href="/reset">Esqueceu a senha?</a><br>
+  </form> 
+  <div class="container-btn">
+    <button id="btn-login" class="login-btn">ENTRAR</button>
   </div>
-<form class="checkbox-login">
-  <input type="checkbox"name="remember"><label for="remember">Lembrar meus dados</label>
-</form>
-<div class="container-btn">
-  <button id="btn-login" class="login-btn">ENTRAR</button>
-</div>
-<hr class="line">
-  <h4 class="register-login">Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span><br> Ou </h4>
-<div class="container-btn">
-  <button id="btn-google" class="btn-google" type="onLoad"></button>
-</div>
+  <hr class="line">
+    <h4 class="register-login">Não tem cadastro? <span><a href="/registration" id="registration">Cadastre-se</a></span><br> Ou </h4>
+  <div class="container-btn">
+    <button id="btn-google" class="btn-google" type="onLoad"></button>
+  </div>
   `;
 
   rootElement.innerHTML = container;

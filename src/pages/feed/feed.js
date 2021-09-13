@@ -8,7 +8,6 @@ export const feed = () => {
   const container = `
     <div class="container-feed">
     <nav class="nav-bar">
-      <img class="logoPageFeed" src="./img/logo-nome.png" alt="logo">
       <h2 class="photo">Feed</h2>
       <div class="div-logout">
         <button class="btn-logout" type="button" id="btnLogout">Sair</button>
@@ -17,9 +16,8 @@ export const feed = () => {
     <section>
         <form class="form-post" id="container-post"> 
           <div class="post">
-            <input type="text" id="nameUser">
-            <textarea id="postText" type="textarea" class="new-post" placeholder="Novo Post"></textarea> 
-            <img src="img/icone-img.png" class="img-photo" id="btn-photo" type="button">
+            <input type="text" id="nameUser" placeholder="Seu nome">
+            <textarea id="postText" type="textarea" class="new-post" placeholder="Qual receita você gostaria de compartilhar?"></textarea> 
             <button id="btnSendPost" type="submit" class="btn-publicar">Publicar</button>
           </div>
         </form>

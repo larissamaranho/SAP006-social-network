@@ -1,10 +1,10 @@
 .img-home{
   text-align: center;
-  margin-top: 100px;
 }
 
 .text-home{
   text-align: center;
+  margin: 1rem 0rem;
 }
 
 .btn-home{
@@ -14,3 +14,16 @@
   text-align: center;
 }
 
+.btn-start {
+  margin: 1rem 0rem;
+  background-color: #d5c9d5;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+}
+
+img.logoDoce {
+  margin: 1rem 1rem;
+  margin-top: 15vw;
+}
