@@ -1,9 +1,10 @@
 import { likePost, getPost, unLikePost, editPost, deletePost } from '../../services/authentication.js';
 export const viewPost = (data) => {
     const likeArray = data.data().like;
-    const section = document.createElement("li");
+    const section = document.createElement("div");
     section.setAttribute("id", data.id);
     section.setAttribute("data-post", data.id);
+    section.setAttribute("class", "class-post")
     const idPost = data.id;
     const idUser = firebase.auth().currentUser.uid;
     const textPost = data.data().post;
@@ -15,11 +16,11 @@ export const viewPost = (data) => {
       </section> 
       <textarea data-text="${data.id}" id="getPosts" disabled>${data.data().post}</textarea>
       <section id="containerButtons">
-        <button data-like="${data.id}" id="${data.id}">Like</button>
+        <button data-like="${data.id}" id="${data.id}" class="btn-class1"><img src="../img/candy.png"></button>
         <span data-numberLike="${data.id}" id="numberLike">${data.data().like.length}</span>
-        <button data-edit="${data.id}" id="${data.id}">Editar</button>
+        <button data-edit="${data.id}" id="${data.id}" class="btn-class">Editar</button>
         <button data-save="${data.id}" id="${data.id}" class="btnSave">Salvar</button>
-        <button data-delete="${data.id}" id="${data.id}">Excluir</button>
+        <button data-delete="${data.id}" id="${data.id}" class="btn-class">Excluir</button>
       </section>
       `;
 
